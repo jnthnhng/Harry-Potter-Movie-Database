@@ -1,0 +1,38 @@
+
+<body>
+  <div class="content">
+    <h2>Update {{location_in_movie.mid}} {{location_in_movie.lid}}</h2>
+    <form id='update-location-in-movie' style="background-color:lightgray" action="/locations_in_movies" method="put">
+      <fieldset>
+        {{!-- <input type='text' hidden id='id'> --}}
+
+        <div>
+          <label for="location">Location:</label>
+          <select name='new_location_id' id="location-selector" value="{{locations.name}}">
+            {{#each locations}}
+            <option value="{{lid}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>
+
+        <div>
+          <label for="movie">Movie:</label>
+          <select name='new_movie_id' id="movie-selector" value="{{movies.title}}">
+            {{#each movies}}
+            <option value="{{mid}}">{{title}}</option>
+            {{/each}}
+          </select>
+        </div>
+
+        </br>
+        {{!-- Add onclick functionality --}}
+        <button onclick="updateLocationInMovie({{location_in_movie.lid}},{{location_in_movie.mid}})">Update Location in Movie</button>
+      </fieldset>
+    </form>
+    <br>
+<script defer>
+selectMovie({{location_in_movie.mid}});
+selectLocation({{location_in_movie.lid}});
+</script>
+</body>
+</html>

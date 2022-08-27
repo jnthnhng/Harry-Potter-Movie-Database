@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<title>Harry Potter Movies Database</title>
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+  <div class="content">
+    <h2>Update {{character.first_name}} {{character.last_name}}</h2>
+    <form id='update-character' style="background-color:lightgray" action="/characters" method="put">
+          <fieldset>
+
+            {{!-- character name section --}}
+
+            <label>First Name: </label>
+            <input type='text' name= 'first_name' id='fname' value="{{character.first_name}}" placeholder="Character's First Name" date>
+            <span id="nameRequired"></span>
+            <br>
+
+            <label>Last Name: </label>
+            <input type='text' name='last_name' id='lanme' value="{{character.last_name}}" placeholder="Character's Last Name" required>
+            <span id="nameRequired"></span>
+            </br>
+
+
+            {{!-- gender section --}}
+
+            <div>
+              <label for="gender">Gender:</label>
+              <select name='new_gender_id' id="gender-selector">
+                {{#each genders}}
+                <option value="{{id}}">{{gender_type}}</option>
+                {{/each}}
+              </select>
+            </div>
+
+            {{!-- house section --}}
+
+            <div>
+              <label for="house">House:</label>
+              <select name='new_house_id' id="house-selector">
+                {{#each houses}}
+                <option value="{{id}}">{{name}}</option>
+                {{/each}}
+              </select>
+            </div>
+
+            {{!-- Race section --}}
+
+            <div>
+              <label for="race">Race:</label>
+              <select name='new_race_id' id="race-selector">
+                {{#each races}}
+                <option value="{{id}}">{{blood_type}}</option>
+                {{/each}}
+              </select>
+            </div>
+            <br>
+
+            {{!-- Race section --}}
+            <button onclick="updateCharacter({{character.id}})">Update Character</button>
+      </fieldset>
+    </form>
+    <br>
+<script defer>
+selectGender({{character.gender}});
+selectHouse({{character.house}});
+selectRace({{character.race}});
+</script>
+{{!-- changed this from selectHouse to selectMascot. The function also changed from selectHouse to selectMascot in the updateFunctions.js--}}
+</body>
+</html>

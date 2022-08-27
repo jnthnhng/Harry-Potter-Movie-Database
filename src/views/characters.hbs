@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<title>Harry Potter Movies Database</title>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+  <div class="content">
+    <h2>Add a Character to the</h2>
+    <h2>Harry Potter Movies Database</h2>
+    <div>
+    <h4><span> ** Please use on the Google Chrome browser **</span></h4>
+    </div>
+    <form id='addcharacter' style="background-color:lightgray" action="/characters" method="post">
+      <fieldset>
+        <i> * Enter character information into fields to add a new character * </i>
+        <br>
+
+        <br>
+        <label>First Name: </label>
+        <input type='text' name= 'first_name' id='name' placeholder="Character's First Name" required>
+        <span id="nameRequired"></span>
+        <br>
+
+        <br>
+        <label>Last Name: </label>
+        <input type='text' name='last_name' id='reps' placeholder="Character's Last Name" required>
+        <span id="nameRequired"></span>
+        </br>
+
+        <br>
+        <div>
+          <label for="gender">Gender:</label>
+          <select name='gender' id="gender">
+            {{#each genders}}
+            <option value="{{id}}">{{gender_type}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <br>
+        
+        <div>
+          <label for="house">House:</label>
+          <select name='house' id="house">
+            {{#each houses}}
+            <option value="{{id}}">{{name}}</option>
+            {{/each}}
+          </select>
+          <br><br>
+        </div>
+
+        <div>
+          <label for="race">Race:</label>
+          <select name='race' id="race">
+            {{#each races}}
+            <option value="{{id}}">{{blood_type}}</option>
+            {{/each}}
+          </select>
+          <br><br>
+        </div>
+   
+        <button type="submit" formmethod="post">Add Character</button>
+      </fieldset>
+    </form>
+    <br>
+
+    <div class="table_header">
+      <h3><span>Characters Table</span></h3>
+    </div>
+
+      <form id='filter_character' action='' method='' style="background-color:lightgray; border:1px solid black;">
+      <!--- this form does not submit directly, the button handles all the interaction with backend -->
+          <i> * Sort the table by house * </i>
+          <br>
+
+          <br>
+          <label> Filter by house: </label>
+          <select id='house_filter' name="house">
+              {{#each houses}}
+              <option value="{{id}}">{{name}}</option>
+              {{/each}}
+              <option value="All">All</option>
+          </select>
+          <input type="button" value="Filter" onclick="filterCharactersByHouse()">
+      </form>
+      <br>
+
+      <form id='search_character' action='' method='' style="background-color:lightgray; border:1px solid black;">
+      <!--- this form does not submit directly, the button handles all the interaction with backend -->
+          <i> * Search table by character first name beginning with ___ * </i>
+          <br>
+          <i> * Example: Search "h" or "harry" if trying to find "Harry Potter" * </i>
+          <br>
+
+          <br>
+          <label> Search characters:</label>
+          <input id='first_name_search_string' type='text' name='first_name_search_string' value=''>
+          <input type="button" value="Search" onclick="searchCharacterByFirstName()">
+      </form>
+      <br>
+
+
+    <table id='databaseTable' border="1px solid black" style="background-color:lightgray">
+      <thead>
+        <tr>
+          {{!-- <th>ID</th> --}}
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>House</th>
+          <th>Gender</th>
+          <th>Race</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        
+        {{#each characters}}
+        <tr>
+          <td>{{first_name}}</td>
+          <td>{{last_name}}</td>
+
+          {{#if house}}
+          <td>{{house}}</td>
+          {{else}}
+          <td>NULL</td>
+          {{/if}}
+
+          {{#if gender}}
+          <td>{{gender}}</td>
+          {{else}}
+          <td>NULL</td>
+          {{/if}}
+
+          {{#if race}}
+          <td>{{race}}</td>
+          {{else}}
+          <td>NULL</td>
+          {{/if}}
+          <td><a href="/characters/{{id}}"><button>Update</button></a></td>
+          <td><button onclick="deleteCharacter({{id}})">Delete</button></td>
+
+          
+        </tr>
+        {{/each}}
+      </tbody>
+
+    </table>
+  </div>
+
+</body> 
+</html>

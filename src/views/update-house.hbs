@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<title>Harry Potter Movies Database</title>
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+  <div class="content">
+    <h2>Update {{house.name}}</h2>
+    <form id='update-house' style="background-color:lightgray" action="/houses" method="put">
+      <fieldset>
+        {{!-- <input type='text' hidden id='id'> --}}
+        <div>
+          <label>Name: </label>
+          <input type='text' name='new_house_name' id='house-selector' value="{{house.name}}"  placeholder="House Name" required>
+        </div>
+        <br>
+
+
+        <div>
+          <label for="mascot">Mascot:</label>
+          <select name='new_mascot_id' id="mascot-selector">
+            {{#each mascots}}
+            <option value="{{id}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>
+
+        </br>
+        {{!-- Add onclick functionality --}}
+        <button onclick="updateHouse({{house.id}})">Update House</button>
+      </fieldset>
+    </form>
+    <br>
+<script defer>selectMascot({{house.mascot}});</script> 
+{{!-- changed this from selectHouse to selectMascot. The function also changed from selectHouse to selectMascot in the updateFunctions.js--}}
+</body> 
+</html>

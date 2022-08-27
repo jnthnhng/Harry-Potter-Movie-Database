@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<title>Harry Potter Movies Database</title>
+  <link rel="stylesheet" href="css/style.css"> 
+
+</head>
+
+<body>
+  <div class="content">
+    <h2>Add a Race to the Harry Potter Movies Database</h2>
+    <div>
+    <h4><span> ** Please use on the Google Chrome browser **</span></h4>
+    </div>
+    <form id='addrace' style="background-color:lightgray" action="/races" method="post">
+      <fieldset>
+        <input type='text' hidden id='id'>
+        <i> * Enter race information into fields to add a new race * </i>
+        <br>
+
+        <br>
+        <label>Race: </label>
+        <input type='text' name='blood_type' id='blood_type' placeholder="blood type" required>
+        <br>
+        <br>
+        <button type="submit" formmethod="post">Add Race</button>
+      </fieldset>
+      
+    </form>
+    <br>
+
+    <div class="table_header">
+      <h3><span>Races Table</span></h3>
+    </div>
+
+    <table id='databaseTable' border="1px solid black" style="background-color:lightgray">
+      <thead>
+        <tr>
+          {{!-- <th>ID</th> --}}
+          <th>Blood Type</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        
+        {{#each races}}
+        <tr>
+          {{!-- <td>{{id}}</td> --}}
+          <td>{{blood_type}}</td>
+          <td><a href="/races/{{id}}"><button>Update</button></td>
+          <td><button onclick="deleteRace({{id}})">Delete</button></td>
+        </tr>
+        {{/each}}
+      </tbody>
+
+    </table>
+  </div>
+
+  {{!-- <script src='script.js' type='text/javascript'></script> --}}
+</body> 
+</html>
+

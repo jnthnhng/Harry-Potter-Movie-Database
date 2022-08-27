@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<title>Harry Potter Movies Database</title>
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+  <div class="content">
+    <h2>Update {{gender.gender_type}}</h2>
+    <form id='update-gender' style="background-color:lightgray" action="/genders" method="put">
+      <fieldset>
+        {{!-- <input type='text' hidden id='id'> --}}
+        <div>
+          <label>Gender Type: </label>
+          <input type='text' name='new_gender_type' id='gender-selector' value="{{gender.gender_type}}"  placeholder="Gender Type" required>
+        </div>
+        <br>
+
+        </br>
+        {{!-- Add onclick functionality --}}
+        <button onclick="updateGender({{gender.id}})">Update Gender</button>
+      </fieldset>
+    </form>
+    <br>
+<script defer>selectMascot({{house.mascot}});</script> 
+{{!-- changed this from selectHouse to selectMascot. The function also changed from selectHouse to selectMascot in the updateFunctions.js--}}
+</body> 
+</html>

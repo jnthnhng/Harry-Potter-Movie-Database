@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<title>Harry Potter Movies Database</title>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <div class="content">
+    <h2>Add a Mascot to the Harry Potter Movies Database</h2>
+    <div>
+    <h4><span> ** Please use on the Google Chrome browser **</span></h4>
+    </div>
+    <form id='addmascot' style="background-color:lightgray" action="/Mascots" method="post">
+      <fieldset>
+        <input type='text' hidden id='id'>
+        <i> * Enter mascot information into fields to add a new mascot * </i>
+        <br>
+
+        <br>
+        <label>Name: </label>
+        <input type='text' name='name' id='name' placeholder="Name" required>
+        <br>
+
+        <br>
+        <button type="submit" formmethod="post">Add Mascot</button>
+      </fieldset>
+
+    </form>
+    <br>
+
+    <div class="table_header">
+      <h3><span>Mascots Table</span></h3>
+    </div>
+
+    <table id='databaseTable' border="1px solid black" style="background-color:lightgray">
+      <thead>
+        <tr>
+          {{!-- <th>ID</th> --}}
+          <th>Name</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        
+        {{#each mascots}}
+        <tr>
+          {{!-- <td>{{id}}</td> --}}
+          <td>{{name}}</td>
+          <td><a href="/mascots/{{id}}"><button>Update</button></td>
+          <td><button onclick="deleteMascot({{id}})">Delete</button></td>
+        </tr>
+        {{/each}}
+      </tbody>
+
+    </table>
+  </div>
+
+  {{!-- <script src='script.js' type='text/javascript'></script> --}}
+</body> 
+</html>

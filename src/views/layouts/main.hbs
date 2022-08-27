@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Harry Potter Movies Database</title>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+
+  <header>
+    {{!-- <h1 class="nav-header"><img src="https://www.clipartmax.com/png/full/319-3198755_harry-potter-logo-png.png"/></h1> --}}
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/characters">Characters</a></li>
+        <li><a href="/movies">Movies</a></li>
+        <li><a href="/houses">Houses</a></li>
+        <li><a href="/mascots">Mascots</a></li>
+        <li><a href="/races">Races</a></li>
+        <li><a href="/genders">Genders</a></li>
+        <li><a href="/locations">Locations</a></li>
+        <li><a href="/locations_types">Locations Types</a></li>
+        <li><a href="/locations_in_movies">Locations in Movies</a></li>
+        <li><a href="/character_movie_appearances">Character Movie Appearances</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<head>
+	<title>Harry Potter Movies Database</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    {{#each jsscripts}}
+    <script src="/static/{{this}}"></script>
+    {{/each}}
+</head>
+<body>
+	{{{body}}}
+</body>
+</html>

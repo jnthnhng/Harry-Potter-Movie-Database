@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<title>Harry Potter Movies Database</title>
+  <link rel="stylesheet" href="css/style.css"> 
+
+</head>
+
+<body>
+  <div class="content">
+    <h2>Add a Location Type to the</h2>
+    <h2>Harry Potter Movies Database</h2>
+
+    <div>
+      <h4><span> ** Please use on the Google Chrome browser **</span></h4>
+    </div>
+
+    <form id='addlocationstypes' style="background-color:lightgray" action="/locations_types" method="post">
+      <fieldset>
+        <input type='text' hidden id='id'>
+        <i> * Enter location type information into fields to add a new location type * </i>
+        <br>
+
+        <br>
+        <label>Location Type: </label>
+        <input type='text' name='location_type' id='location_type' placeholder="Location Type" required>
+        <br>
+        <br>
+
+        <button type="submit" formmethod="post">Add Location Type</button>
+        
+      </fieldset>
+    </form>
+    <br>
+
+    <div class="table_header">
+      <h3><span>Location Types Table</span></h3>
+    </div>
+
+    <table id='databaseTable' border="1px solid black" style="background-color:lightgray">
+      <thead>
+        <tr>
+          {{!-- <th>ID</th> --}}
+          <th>Location Type</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        
+        {{#each locationsTypes}}
+        <tr>
+          {{!-- <td>{{id}}</td> --}}
+          <td>{{type}}</td>
+          <td><a href="/locations_types/{{id}}"><button>Update</button></td>
+          <td><button onclick="deleteLocationType({{id}})">Delete</button></td>
+        </tr>
+        {{/each}}
+      </tbody>
+
+    </table>
+  </div>
+
+  {{!-- <script src='script.js' type='text/javascript'></script> --}}
+</body> 
+</html>

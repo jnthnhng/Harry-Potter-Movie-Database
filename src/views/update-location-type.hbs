@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<title>Harry Potter Movies Database</title>
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+  <div class="content">
+    <h2>Update {{locationType.type}}</h2>
+    <form id='update-location-type' style="background-color:lightgray" action="/locations_types" method="put">
+      <fieldset>
+        {{!-- <input type='text' hidden id='id'> --}}
+        <div>
+          <label>Location Type: </label>
+          <input type='text' name='new_location_type' id='location-type-selector' value="{{locationType.type}}"  placeholder="Location Type" required>
+        </div>
+        <br>
+
+        </br>
+        {{!-- Add onclick functionality --}}
+        <button onclick="updateLocationType({{locationType.id}})">Update Location Type</button>
+      </fieldset>
+    </form>
+    <br>
+
+{{!-- changed this from selectHouse to selectMascot. The function also changed from selectHouse to selectMascot in the updateFunctions.js--}}
+</body> 
+</html>

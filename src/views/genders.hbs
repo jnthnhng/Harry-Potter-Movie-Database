@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<title>Harry Potter Movies Database</title>
+  <link rel="stylesheet" href="css/style.css"> 
+
+</head>
+
+<body>
+  <div class="content">
+    <h2>Add a Gender to the Harry Potter Movies Database</h2>
+
+    <div>
+      <h4><span> ** Please use on the Google Chrome browser **</span></h4>
+    </div>
+
+
+    <form id='addgender' style="background-color:lightgray" action="/genders" method="post">
+      <fieldset>
+        <input type='text' hidden id='id'>
+        <i> * Enter gender information into fields to add a new gender * </i>
+        <br>
+
+        <br>
+        <label>Gender Type: </label>
+        <input type='text' name='gender_type' id='gender_type_id' placeholder="Gender Type" required>
+        <br>
+
+        <br>
+        <button type="submit" formmethod="post">Add Gender</button>
+        <br>
+      </fieldset>
+    </form>
+    <br>
+
+    <div class="table_header">
+      <h3>
+        <span>Genders Table</span>
+      </h3>
+    </div>
+
+    <table id='databaseTable' border="1px solid black" style="background-color:lightgray">
+      <thead>
+        <tr>
+          {{!-- <th>ID</th> --}}
+          <th>Gender Type</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        
+        {{#each genders}}
+        <tr>
+          {{!-- <td>{{id}}</td> --}}
+          <td>{{gender_type}}</td>
+          <td><a href="/genders/{{id}}"><button>Update</button></td>
+          <td><button onclick="deleteGender({{id}})">Delete</button></td>
+        </tr>
+        {{/each}}
+      </tbody>
+
+    </table>
+  </div>
+
+  {{!-- <script src='script.js' type='text/javascript'></script> --}}
+</body> 
+</html>

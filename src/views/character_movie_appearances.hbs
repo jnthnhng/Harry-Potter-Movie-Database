@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<title>Harry Potter Movies Database</title>
+  <link rel="stylesheet" href="css/style.css"> 
+</head>
+
+<body>
+  <div class="content">
+    <h2>Add a Character Appearance to the</h2>
+    <h2>Harry Potter Movies Database</h2>
+    <div>
+    <h4><span> ** Please use on the Google Chrome browser **</span></h4>
+    </div>
+    <form id='addcharactermovieappearance' style="background-color:lightgray" action="/character_movie_appearances" method="post">
+      <fieldset>
+        <input type='text' hidden id='id'>
+        <i> * Select from filters to add a new character appearance in a movie * </i>
+        <br>
+
+        <br>
+        <div>
+          <label for="mid">Movie:</label>
+          <select name='mid' id="mid">
+            {{#each movies}}
+            <option value="{{id}}">{{title}}</option>
+            {{/each}}
+          </select>
+          
+          <br><br>
+        </div>
+        
+        <div>
+          <label for="cid">Character:</label>
+          <select name='cid' id="cid">
+            {{#each characters}}
+            <option value="{{id}}">{{first_name}} {{last_name}}</option>
+            {{/each}}
+          </select>
+          
+          <br><br>
+        </div>
+
+        <div><button type="submit" formmethod="post">Add Character Appearance</button></div>
+        
+        <br>
+
+      </fieldset>
+    </form>
+    <br>
+
+    <div class="table_header">
+      <h3><span>Character Movie Appearances Table</span></h3>
+    </div>
+
+    <table id='databaseTable' border="1px solid black" style="background-color:lightgray">
+      <thead>
+        <tr>
+          <th>Character ID</th>
+          <th>Movie ID</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        
+        {{#each characterMovieAppearance}}
+        <tr>
+          {{#if full_name}}
+          <td>{{full_name}}</td>
+          {{else}}
+          <td>NULL</td>
+          {{/if}}
+
+          {{#if movie_title}}
+          <td>{{movie_title}}</td>
+          {{else}}
+          <td>NULL</td>
+          {{/if}}
+          
+{{!--           <td><button>Update</button></td> --}}
+          <td><button onclick="deleteCharacterMovieAppearance({{cid}}, {{mid}})">Delete</button></td>
+        </tr>
+        {{/each}}
+      </tbody>
+
+    </table>
+  </div>
+
+</body> 
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<title>Harry Potter Movies Database</title>
+  <link rel="stylesheet" href="css/style.css"> 
+
+</head>
+
+<body>
+  <div class="content">
+    <h2>Add a Location Appearance to the</h2>
+    <h2>Harry Potter Movies Database</h2>
+
+    <div>
+      <h4><span> ** Please use on the Google Chrome browser **</span></h4>
+    </div>
+
+    <form id='addlocationmovieappearance' style="background-color:lightgray" action="/locations_in_movies" method="post">
+      <fieldset>
+        <input type='text' hidden id='id'>
+        <i> * Select from filters to add a new location appearance in a movie * </i>
+        <br>
+
+        <br>
+        <div>
+          <label for="lid">Location:</label>
+          <select name='lid' id="locations">
+            {{#each locations}}
+            <option value="{{lid}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>
+
+        <br>
+        <div>
+          <label for="mid">Movie:</label>
+          <select name='mid' id="movieId">
+            {{#each movies}}
+            <option value="{{mid}}">{{title}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <br>
+
+
+        <div><button type="submit" formmethod="post">Add a Location Appearance</button></div>
+        <br>
+
+      </fieldset>
+    </form>
+    <br>
+
+    <div class="table_header">
+      <h3><span>Locations in Movies Table</span></h3>
+    </div>
+
+    <table id='databaseTable' border="1px solid black" style="background-color:lightgray">
+      <thead>
+        <tr>
+          <th>Movie ID</th>
+          <th>Location ID</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        
+        {{#each locationsInMovies}}
+        <tr>
+          {{#if movie_title}}
+          <td>{{movie_title}}</td>
+          {{else}}
+          <td>NULL</td>
+          {{/if}}
+
+          {{#if location_name}}
+          <td>{{location_name}}</td>
+          {{else}}
+          <td>NULL</td>
+          {{/if}}
+          
+          <td><a href="/locations_in_movies/mid/{{mid}}/lid/{{lid}}"><button>Update</button></td>
+          <td><button onclick="deleteLocationInMovie({{mid}},{{lid}})">Delete</button></td>
+        </tr>
+        {{/each}}
+      </tbody>
+
+    </table>
+  </div>
+
+  {{!-- <script src='script.js' type='text/javascript'></script> --}}
+</body> 
+</html>

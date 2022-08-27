@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<title>Harry Potter Movies Database</title>
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+  <div class="content">
+    <h2>Update {{race.blood_type}}</h2>
+    <form id='update-race' style="background-color:lightgray" action="/races" method="put">
+      <fieldset>
+        {{!-- <input type='text' hidden id='id'> --}}
+        <div>
+          <label>Blood Type: </label>
+          <input type='text' name='new_blood_type' id='race-selector' value="{{race.blood_type}}"  placeholder="Blood Type" required>
+        </div>
+        <br>
+
+        </br>
+        {{!-- Add onclick functionality --}}
+        <button onclick="updateRace({{race.id}})">Update Race</button>
+      </fieldset>
+    </form>
+    <br>
+
+{{!-- changed this from selectHouse to selectMascot. The function also changed from selectHouse to selectMascot in the updateFunctions.js--}}
+</body> 
+</html>

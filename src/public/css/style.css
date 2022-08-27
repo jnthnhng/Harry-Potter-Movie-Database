@@ -1,0 +1,83 @@
+@font-face { 
+  font-family: HPFont;
+  src: url('/font/HARRP.TTF');
+}
+
+label {
+  color: darkred;
+  font-weight: bolder
+}
+
+th {
+  color: darkred;
+}
+
+h1 {
+  color: darkred;
+  text-align: center;
+  font-family: HPFont, sans-serif;
+}
+
+.h1-center {
+  text-align: center;
+  vertical-align: center;
+}
+
+h2 {
+  color: darkred;
+  text-align: center;
+  font-family: HPFont, sans-serif;
+}
+
+.table_header {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: black;
+}
+
+h3 {
+  color: darkred;
+}
+
+h3 span {
+  background-color: lightgray;
+  border-radius: 25px;
+  background: lightgray;
+  padding: 1px;
+  width: 200px;
+  height: 150px;
+}
+
+h4 {
+  color: darkred;
+  text-align: center;
+}
+
+h4 span {
+  background-color: lightgray;
+  border-radius: 25px;
+  background: lightgray;
+  padding: 1px;
+  width: 200px;
+  height: 150px;
+}
+
+.content {
+  max-width: 500px;
+  margin: auto;
+}
+
+body {
+  background-image: url('https://images8.alphacoders.com/110/thumbbig-1102284.webp');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+p {
+  color: darkred;
+  text-align: center;
+  font-weight: bolder
+}

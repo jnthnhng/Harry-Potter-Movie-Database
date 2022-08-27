@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<title>Harry Potter Movies Database</title>
+  <link rel="stylesheet" href="css/style.css"> 
+
+</head>
+
+<body>
+  <div class="content">
+    <h2>Add a Location to the</h2>
+    <h2> Harry Potter Movies Database</h2>
+    <div>
+    <h4><span> ** Please use on the Google Chrome browser **</span></h4>
+    </div>
+    <form id='addlocation' style="background-color:lightgray" action="/locations" method="post">
+      <fieldset>
+        <input type='text' hidden id='id'>
+        <i> * Enter location information into fields to add a new location * </i>
+        <br>
+
+        <br>
+        <label>Name: </label>
+        <input type='text' name='name' id='locationName' placeholder="Location Name" required>
+        <br>
+
+        <br>
+        <div>
+          <label for="location_type">Type:</label>
+          <select name='type' id="location_type">
+            {{#each locationsTypes}}
+            <option value="{{id}}">{{type}}</option>
+            {{/each}}
+          </select>
+        </div>
+
+        </br>
+        <button type="submit" formmethod="post">Add Location</button>
+      </fieldset>
+    </form>
+    <br>
+
+    <div class="table_header">
+      <h3><span>Locations Table</span></h3>
+    </div>
+
+    <table id='databaseTable' border="1px solid black" style="background-color:lightgray">
+      <thead>
+        <tr>
+          {{!-- <th>ID</th> --}}
+          <th>Name</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        
+        {{#each locations}}
+        <tr>
+          {{!-- <td>{{id}}</td> --}}
+          <td>{{name}}</td>
+
+          {{#if type}}
+          <td>{{type}}</td>
+          {{else}}
+          <td>NULL</td>
+          {{/if}}
+          
+          <td><a href="/locations/{{id}}"><button>Update</button></td>
+          <td><button onclick="deleteLocation({{id}})">Delete</button></td>
+        </tr>
+        {{/each}}
+      </tbody>
+
+    </table>
+  </div>
+
+  {{!-- <script src='script.js' type='text/javascript'></script> --}}
+</body> 
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<title>Harry Potter Movies Database</title>
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+  <div class="content">
+    <h2>Add a House to the Harry Potter Movies Database</h2>
+
+    <div>
+      <h4><span> ** Please use on the Google Chrome browser **</span></h4>
+    </div>
+
+    <form id='addhouse' style="background-color:lightgray" action="/houses" method="post">
+      <fieldset>
+        <input type='text' hidden id='id'>
+        <i> * Enter house information into fields to add a new house * </i>
+        <br>
+
+        <br>
+        <div>
+          <label>House Name: </label>
+          <input type='text' name = 'house_name' id='house_name_id' placeholder="House Name" required>
+        </div>
+        <br>
+
+
+        <div>
+          <label for="mascot">Mascot:</label>
+          <select name='mascot_id' id="mascot">
+            {{#each mascots}}
+            <option value="{{id}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>
+
+        </br>
+        <button type="submit" formmethod="post">Add House</button>
+      </fieldset>
+    </form>
+    <br>
+
+    <div class="table_header">
+      <h3><span>Houses Table</span></h3>
+    </div>
+
+    <table id='databaseTable' border="1px solid black" style="background-color:lightgray">
+      <thead>
+        <tr>
+          {{!-- <th>ID</th> --}}
+          <th>Name</th>
+          <th>Mascot</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        
+        {{#each houses}}
+        <tr>
+          {{!-- <td>{{id}}</td> --}}
+          <td>{{name}}</td>
+          <td>{{mascot}}</td>
+          {{!-- Linking to update page --}}
+          <td><a href="/houses/{{id}}"><button>Update</button></a></td>
+          <td><button onclick="deleteHouse({{id}})">Delete</button></td>
+        </tr>
+        {{/each}}
+      </tbody>
+
+    </table>
+  </div>
+
+</body> 
+</html>
