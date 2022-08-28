@@ -12,13 +12,29 @@ as well Characters and the Houses to which they are drafted.
 
 **Frontend:** JS, CSS
 
-**Backend:** Express
+**Backend:** Express Framework, Node.js
 
-**Template:** Express Handlebars
+**Template Engine:** Express Handlebars
 
-**Database:** Amazon RDS  for MariaDB (MySQL)
+**Database:** Amazon RDS for MariaDB (MySQL)
 
 ---
+
+## Schema
+
+![Schema](https://lh3.googleusercontent.com/pw/AL9nZEVlwsE1zh1Q7ADch3W_gLMqy0GlyQy6Y9_BKKVH0RmmKUVvTtBb1FJfbsNgekzZFexjtUAKHhg6b-LIyldG0yBlo-x3ahCzwc44e8khIBOEOdW4fi9Zxo1VXrT5lZ_Hj08dsY_6ztDOrNYcGdJkDRQ=w829-h966-no?authuser=2)
+
+---
+
+## ER Diagram 
+
+![Entity-Relationship Diagram](https://lh3.googleusercontent.com/pw/AL9nZEUEjeETicSuooiBX5vmrPg18irTsbcWksfbb1wKj8NNFOv_NcVWvoCy8W9gzbgUze-lgHqfqB2m2Wf_nz-1wGzW4a7B_1f79b8cvE8eZTnaKepcSLwJo6hsgmKoYbkUXbsc_M_6E82-CSI7G224K4A=w849-h731-no?authuser=2)
+
+---
+
+
+
+ 
 ## Screenshots
 
 ![App Screenshot](https://lh3.googleusercontent.com/pw/AL9nZEWoSjn4rq79bUG1PMSSHVUI1V4TJjrQhWJhIweKaYDN6ZpFbKZjFdsI6DPUcuBhM4_XYajE7wKsbh9VfSP7AjUYcjTFhMzNc_81WmZ-F5b9gOVZ8ayuB0p8PApRTHNL-4SsHUmivGPqHi29JEsEq_Q=w668-h718-no?authuser=2)
