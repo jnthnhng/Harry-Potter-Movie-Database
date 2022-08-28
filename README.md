@@ -61,6 +61,6 @@ as well Characters and the Houses to which they are drafted.
 
 ## Acknowledgements
 
-- The TAs and Professor Bill Pfeil from Oregon State University CS 340 class.
+- The TAs and Professor Safonte from Oregon State University CS 340 class.
 
 - [Oregon State University: College of Engineering](https://engineering.oregonstate.edu/)
