@@ -10,9 +10,9 @@ as well Characters and the Houses to which they are drafted.
 
 ## Tech Stack
 
-**Frontend:** JavaScript, CSS, HTML
+**Frontend:** JS, CSS
 
-**Backend:** Express Framework, NodeJS
+**Backend:** Express Framework, Node.js
 
 **Template Engine:** Express Handlebars
 
