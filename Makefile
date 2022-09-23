@@ -2,7 +2,7 @@
 REGISTRY ?= index.docker.io
 
 #Image namespace
-NAMESPACE ?= default_name_spacw
+NAMESPACE ?= hpmd
 
 # image name
 NAME ?= node-hpmd-app
