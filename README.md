@@ -10,13 +10,17 @@ as well Characters and the Houses to which they are drafted.
 
 ## Tech Stack
 
-**Frontend:** JS, CSS
+**Frontend:** JavaScript, CSS, HTML
 
-**Backend:** Express Framework, Node.js
+**Backend:** Express Framework, NodeJS
 
 **Template Engine:** Express Handlebars
 
 **Database:** Amazon RDS for MariaDB (MySQL)
+
+**Container Engine:** Dockers
+
+**Container Management:** Kubernetes
 
 ---
 
